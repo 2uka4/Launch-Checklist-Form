@@ -1,4 +1,5 @@
 // Write your JavaScript code here!
+
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
@@ -12,13 +13,23 @@ window.addEventListener("load", function() {
          alert("All fields are required!");
          event.preventDefault();
       }
-      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" ))  {
+      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" || (typeof fuelLevel.value !== "number")))  {
          alert("Appropriate data type is required");
          // stop the form submission
          event.preventDefault();
       }
    })
 })
+const update  = function (faultyItems) {
+const faultyItems = 
+    `<ol id="faultyItems${faultyItems.name}">
+      <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+      <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+      <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+      <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+    </ol>`;
+return faultyItems;
+};
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
