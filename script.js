@@ -18,37 +18,8 @@ window.addEventListener("load", function() {
          // stop the form submission
          event.preventDefault();
       }
-<<<<<<< HEAD
-      const update  = function () {
-         
-         let launchStatusCheck = document.getElementById("launchStatusCheck")
-         launchStatusCheck.style.visibility = "visible"
-         let launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is Not Ready For Launch'
-         launchStatus.style.color = red;
-         // faultyItems.innerHTML =
-         // `    
-         // <ol id="faultyItems${faultyItems.name}">
-         //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
-         //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
-         //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
-         //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
-         // </ol>`;
-         } 
-      if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
-            console.log(update());
-            // event.preventDefault();
-      } else {
-         launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is  Ready For Launch'
-         launchStatus.style.color = green; 
-      }
-   })
-   })
-   
 
-
-
-=======
-   const update  = function () {
+    const update  = function () {
       let faultyItems = document.getElementById("faultyItems")
       faultyItems.style.visibility = "visible"
       // faultyItems.innerHTML =
@@ -66,7 +37,6 @@ window.addEventListener("load", function() {
    }
 })
 })
->>>>>>> 9383572b5cf34befbeddda654503374f11e0fd4a
 
    
       // stop the form submission
