@@ -17,25 +17,34 @@ window.addEventListener("load", function() {
          // stop the form submission
          event.preventDefault();
       }
-      
+      const update  = function () {
+         
+         let launchStatusCheck = document.getElementById("launchStatusCheck")
+         launchStatusCheck.style.visibility = "visible"
+         let launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is Not Ready For Launch'
+         launchStatus.style.color = red;
+         // faultyItems.innerHTML =
+         // `    
+         // <ol id="faultyItems${faultyItems.name}">
+         //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+         //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+         //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+         //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+         // </ol>`;
+         } 
+      if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+            console.log(update());
+            // event.preventDefault();
+      } else {
+         launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is  Ready For Launch'
+         launchStatus.style.color = green; 
+      }
    })
-   const update  = function () {
-      let faultyItems = document.getElementById("faultyItems")
-      faultyItems.style.visibility = "visible"
-      // faultyItems.innerHTML =
-      // `    
-      // <ol id="faultyItems${faultyItems.name}">
-      //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
-      //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
-      //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
-      //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
-      // </ol>`;
-      } 
-   if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
-         console.log(update());
-         event.preventDefault();
-   }
-})
+   })
+   
+
+
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
