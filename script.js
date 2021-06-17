@@ -1,4 +1,5 @@
 // Write your JavaScript code here!
+
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
@@ -12,11 +13,12 @@ window.addEventListener("load", function() {
          alert("All fields are required!");
          event.preventDefault();
       }
-      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" ))  {
+      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" || (typeof Number(fuelLevel.value) !== "number")))  {
          alert("Appropriate data type is required");
          // stop the form submission
          event.preventDefault();
       }
+<<<<<<< HEAD
       const update  = function () {
          
          let launchStatusCheck = document.getElementById("launchStatusCheck")
@@ -43,6 +45,32 @@ window.addEventListener("load", function() {
    })
    
 
+
+
+=======
+   const update  = function () {
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+      // faultyItems.innerHTML =
+      // `    
+      // <ol id="faultyItems${faultyItems.name}">
+      //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+      //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+      //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+      //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+      // </ol>`;
+      } 
+   if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+         console.log(update());
+         event.preventDefault();
+   }
+})
+})
+>>>>>>> 9383572b5cf34befbeddda654503374f11e0fd4a
+
+   
+      // stop the form submission
+      
 
 
 
