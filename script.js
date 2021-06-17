@@ -17,7 +17,24 @@ window.addEventListener("load", function() {
          // stop the form submission
          event.preventDefault();
       }
+      
    })
+   const update  = function () {
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+      // faultyItems.innerHTML =
+      // `    
+      // <ol id="faultyItems${faultyItems.name}">
+      //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+      //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+      //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+      //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+      // </ol>`;
+      } 
+   if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+         console.log(update());
+         event.preventDefault();
+   }
 })
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
