@@ -13,23 +13,35 @@ window.addEventListener("load", function() {
          alert("All fields are required!");
          event.preventDefault();
       }
-      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" || (typeof fuelLevel.value !== "number")))  {
+      if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" || (typeof Number(fuelLevel.value) !== "number")))  {
          alert("Appropriate data type is required");
          // stop the form submission
          event.preventDefault();
       }
-   })
+   const update  = function () {
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+      // faultyItems.innerHTML =
+      // `    
+      // <ol id="faultyItems${faultyItems.name}">
+      //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+      //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+      //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+      //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+      // </ol>`;
+      } 
+   if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+         console.log(update());
+         event.preventDefault();
+   }
 })
-const update  = function (faultyItems) {
-const faultyItems = 
-    `<ol id="faultyItems${faultyItems.name}">
-      <li>pilotStatus: ${faultyItems.pilotStatus}</li>
-      <li>copilotStatus: ${faultyItems.copilotStatus}</li>
-      <li>fuelStatus: ${faultyItems.fuelStatus}</li>
-      <li>cargoStatus: ${faultyItems.cargoStatus}</li>
-    </ol>`;
-return faultyItems;
-};
+})
+
+   
+      // stop the form submission
+      
+
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
