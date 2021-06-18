@@ -1,0 +1,65 @@
+let statusCheck = document.getElementById("launchStatusCheck");
+statusCheck.addEventListener("submit", function(event) {
+
+      let launchStatusCheck = document.getElementById("launchStatusCheck")
+      launchStatusCheck.style.visibility = "visible"
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+      let launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is Not Ready For Launch'
+      faultyItems.style.color = "red";
+      faultyItems.innerHTML = 
+        pilotStatus = document.getElementById("pilotStatus").innerHTML = `${pilotStatus} is ready`;
+        copilotStatus = document.getElementById("copilotStatus").innerHTML = `${copilotStatus} is ready`;
+        fuelStatus = document.getElementById("fuelStatus").innerHTML = `${fuelStatus} is too low for launch`;
+        cargoStatus = document.getElementById("cargoStatus").innerHTML = `${cargoStatus} is too high for launch`;
+      
+   if (Number(fuelLevel.value) < 10000 || Number(cargoMass.value) > 11000){
+         console.log(update());
+   } else {
+      launchStatus = document.getElementById("launchStatus").innerHTML = 'Shuttle Is  Ready For Launch'
+      faultyItems.style.color = "green"; 
+   }
+   })
+
+   second trial did not work eather. 
+
+   const update  = function () {
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+      faultyItems.innerHTML 
+      // `    
+      // <ol id="faultyItems${faultyItems}">
+      //   <li>pilotStatus: ${pilotName}</li> is ready 
+      //   <li>copilotStatus: ${copilotName}</li> is ready
+      //   <li>fuelStatus: ${fuelLevel}</li> is too low
+      //   <li>cargoStatus: ${cargoMass}</li> is too high
+      // </ol>`
+      
+   if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+         console.log(faultyItems.innerHTML);
+         event.preventDefault();
+   } else { 
+         console.log ("Shuttle is ready!")
+   } 
+}
+})
+});
+
+
+const update  = function () {
+      let faultyItems = document.getElementById("faultyItems")
+      faultyItems.style.visibility = "visible"
+         // faultyItems.innerHTML =
+         // `    
+         // <ol id="faultyItems${faultyItems.name}">
+         //   <li>pilotStatus: ${faultyItems.pilotStatus}</li>
+         //   <li>copilotStatus: ${faultyItems.copilotStatus}</li>
+         //   <li>fuelStatus: ${faultyItems.fuelStatus}</li>
+         //   <li>cargoStatus: ${faultyItems.cargoStatus}</li>
+         // </ol>`;
+      }  
+      if (Number(fuelLevel.value) <= 10000 || Number(cargoMass.value) >= 10000){
+            console.log();
+            event.preventDefault();
+      }
+      })
