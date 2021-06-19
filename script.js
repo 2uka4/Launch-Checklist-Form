@@ -4,16 +4,19 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {  
       response.json().then(function(json) {
          const div = document.getElementById("missionTarget")
+         let index = 0;
+         div.addEventListener("click", function(){
          div.innerHTML = `
          <h2>Mission Destination</h2>
          <ol>
-            <li>Name: ${json[3].name}</li>
-            <li>Diameter: ${json[3].diameter}</li>
-            <li>Star: ${json[4].star}</li>
-            <li>Distance from Earth: ${json[3].distance}</li>
-            <li>Number of Moons: ${json[3].moons}</li>
+            <li>Name: ${json[index].name}</li>
+            <li>Diameter: ${json[index].diameter}</li>
+            <li>Star: ${json[index].star}</li>
+            <li>Distance from Earth: ${json[index].distance}</li>
+            <li>Number of Moons: ${json[index].moons}</li>
          </ol>
-            <img src="${json[3].image}"> `;
+            <img src="${json[index].image}"> `;
+         index = (index + 1) % json.length;
 
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
@@ -92,6 +95,7 @@ window.addEventListener("load", function() {
       fuelStatus.innerHTML = " Fuel level is good to launch!"
       cargoStatus.innerHTML = " Cargo mass is good to launch!"
    }
+   })
 })
 })
 })
