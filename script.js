@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
          </ol>
             <img src="${json[index].image}"> `;
          index = (index + 1) % json.length;
-
+   })
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
       event.preventDefault();
@@ -96,7 +96,6 @@ window.addEventListener("load", function() {
       cargoStatus.innerHTML = " Cargo mass is good to launch!"
    }
    })
-})
 })
 })
 })
