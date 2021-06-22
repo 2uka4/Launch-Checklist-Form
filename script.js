@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
       response.json().then(function(json) {
          const div = document.getElementById("missionTarget")
          let index = 0;
-         div.addEventListener("click", function(){
+         // div.addEventListener("click", function(){
          div.innerHTML = `
          <h2>Mission Destination</h2>
          <ol>
@@ -17,7 +17,9 @@ window.addEventListener("load", function() {
          </ol>
             <img src="${json[index].image}"> `;
          index = (index + 1) % json.length;
-   })
+      }
+   )
+})
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
       event.preventDefault();
@@ -44,9 +46,10 @@ window.addEventListener("load", function() {
    }
 
    if ((typeof pilotName.value !== "string") || (typeof copilotName.value !== "string" || (typeof Number (fuelLevel.value) !== "number") || (typeof Number (cargoMass.value !== "number")))){
-      // alert("Appropriate data type is required");
+      alert("Appropriate data type is required");
       // event.preventDefault();
    }
+
       //Put logic here to display pilot name and check for fuel level and mass input
 
    if (fuelLevel.value <= 10000 && cargoMass.value <= 10000){
@@ -96,8 +99,6 @@ window.addEventListener("load", function() {
       cargoStatus.innerHTML = " Cargo mass is good to launch!"
    }
    })
-})
-})
-})
+   })
 
 // This block of code shows how to format the HTML once you fetch some planetary JSON!
